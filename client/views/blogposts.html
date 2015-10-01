@@ -1,0 +1,10 @@
+<div class="container">
+	<div class="row">
+		<button ng-click="createBlogEntry()">New blog entry</button>
+	</div>	
+	<div id="blogpostsContainer">
+		<ul>
+			<li ng-repeat="blogPost in blogPosts">{{blogPost.author}}:  {{blogPost.title}} {{blogPost.content}}</li>
+		</ul>						
+	</div>
+</div>
