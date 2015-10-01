@@ -33,8 +33,25 @@ BlogSite.controller('newpostController', ['$scope', '$http', '$rootScope', '$win
 			}).catch(function(err) {
 				console.log(err);
 				alert('There was an error!');
+				$window.location.href = '#blogposts';
 			});
 		}
 	}
 
+}]);
+
+BlogSite.controller('blogdetailController', ['$scope', '$http', '$rootScope', '$window', 'Parse', '$routeParams', function($scope, $http, $rootScope, $window, Parse, $routeParams) {
+
+	Parse.getPost($routeParams.blogId)
+	.then(function(res) {
+		$scope.blogPost = res.data;
+	}).catch(function(err) {
+		console.log(err);
+		alert('There was an error!');
+	});
+	
+	$scope.returntoBlog = function() {
+		$window.location.href = '#blogposts';
+	}
+	
 }]);

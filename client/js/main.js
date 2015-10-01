@@ -13,5 +13,9 @@ BlogSite.config(['$routeProvider', function($routeProvider) {
 	.when('/newpost', {
 		templateUrl : 'views/newpost.html',
 		controller  : 'newpostController'
+	})
+	.when('/blogposts/:blogId', {
+		templateUrl : 'views/blogdetail.html',
+		controller  : 'blogdetailController'
 	});
 }]);

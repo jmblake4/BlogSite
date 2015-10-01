@@ -1,4 +1,4 @@
-BlogSite.factory('Parse', function($http) {
+BlogSite.factory('Parse', ['$http', function($http) {
 
 	var ParseFactory = {};
 
@@ -16,7 +16,12 @@ BlogSite.factory('Parse', function($http) {
 	
 	ParseFactory.submitPost = function(blogPost) {
 		return $http.post(urlPath, JSON.stringify(blogPost), reqHeaders);
-	}
+	};
+	
+	ParseFactory.getPost = function(objectID) {
+		return $http.get(urlPath + objectID, reqHeaders);
+	};
 	
 	return ParseFactory;
-});
+
+}]);
