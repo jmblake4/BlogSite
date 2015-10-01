@@ -2,8 +2,7 @@ BlogSite.controller('blogpostsController', ['$scope', '$http', '$rootScope', '$w
 
 	Parse.getPosts()
 	.then(function(res) {
-		console.log(res);
-		$scope.blogPosts = res.data.results;
+		$scope.blogPosts = res.data.results.reverse();
 	}).catch(function(err) {
 		console.log(err);
 		alert('There was an error!');
@@ -19,9 +18,9 @@ BlogSite.controller('newpostController', ['$scope', '$http', '$rootScope', '$win
 
 	$scope.newPost = function() {
 		var blogAuthor = $scope.blogAuthor, blogTitle = $scope.blogTitle, blogContent = $scope.blogContent;
-		if ( blogAuthor === '' || blogTitle === '' || blogContent === '' ) {
+		if ( blogAuthor === '' || blogTitle === '' || blogContent === '' || blogAuthor === undefined || blogTitle === undefined || blogContent === undefined) {
 			alert('Invalid blog entry!')
-			$window.location.href = '#blogPosts';
+			$window.location.href = '#blogposts';
 		} else {
 			var blogPost = {
 				author: blogAuthor,
@@ -29,12 +28,12 @@ BlogSite.controller('newpostController', ['$scope', '$http', '$rootScope', '$win
 				content: blogContent
 			};
 			Parse.submitPost(blogPost)
-			.then(function() {
-				$window.location.href = '#blogPosts';
+			.then(function(res) {
+				$window.location.href = '#blogposts';
 			}).catch(function(err) {
 				console.log(err);
 				alert('There was an error!');
-			})
+			});
 		}
 	}
 

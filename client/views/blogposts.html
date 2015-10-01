@@ -3,7 +3,7 @@
 		<button ng-click="createBlogEntry()">New blog entry</button>
 	</div>	
 	<div id="blogpostsContainer">
-		<ul>
+		<ul id="blogList">
 			<li ng-repeat="blogPost in blogPosts">{{blogPost.author}}:  {{blogPost.title}} {{blogPost.content}}</li>
 		</ul>						
 	</div>

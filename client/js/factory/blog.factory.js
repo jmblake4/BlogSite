@@ -1,4 +1,4 @@
-BlogSite.factory('Parse', function($http, $q) {
+BlogSite.factory('Parse', function($http) {
 
 	var ParseFactory = {};
 

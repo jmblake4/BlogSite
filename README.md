@@ -14,11 +14,6 @@ Angular usage [examples](https://github.com/curran/screencasts/tree/gh-pages/int
 ### Basic Req's
 Utilize Angular's built in functionality to simplify your client side code. Consult the angular [docs](https://docs.angularjs.org/guide/introduction)
 Note: During this project, always choose to code using angular templating instead of using plain javascript and html. Review Dependency Injection, '$location','$scope', $resource', 'ngResource', 'ngRoute', '$routeProvider', '$http', '$rootScope' as they may be needed
-
-curl -X GET \
-  -H "X-Parse-Application-Id: l0snkcZ4pCRrEoTyJ3ip8VN3cO190TW08a78Vpxq" \
-  -H "X-Parse-REST-API-Key: gWWPdxPQm3OfSdwm1ZHLbVtNIv2BWWQXUztGkw5H" \
-  https://api.parse.com/1/classes/blogPost/c9Q6uz9YGa
   
 ##### client
 
@@ -57,3 +52,7 @@ curl -X GET \
 
 ### Extra Extra Credit
 * Beautify and personalize blog site.
+
+"X-Parse-Application-Id: l0snkcZ4pCRrEoTyJ3ip8VN3cO190TW08a78Vpxq"
+"X-Parse-REST-API-Key: gWWPdxPQm3OfSdwm1ZHLbVtNIv2BWWQXUztGkw5H"
+https://api.parse.com/1/classes/blogPost/
