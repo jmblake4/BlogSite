@@ -1,4 +1,4 @@
-BlogSite.controller('blogpostsController', ['$scope', '$http', '$rootScope', '$window', 'Parse', function($scope, $http, $rootScope, $window, Parse) {
+BlogSite.controller('blogpostsController', ['$scope', '$http', '$rootScope', '$window', '$cacheFactory', 'Parse', function($scope, $http, $rootScope, $window, $cacheFactory, Parse) {
 
 	Parse.getPosts()
 	.then(function(res) {
@@ -14,7 +14,7 @@ BlogSite.controller('blogpostsController', ['$scope', '$http', '$rootScope', '$w
 
 }]);
 
-BlogSite.controller('newpostController', ['$scope', '$http', '$rootScope', '$window', 'Parse', function($scope, $http, $rootScope, $window, Parse) {
+BlogSite.controller('newpostController', ['$scope', '$http', '$rootScope', '$window', '$cacheFactory', 'Parse', function($scope, $http, $rootScope, $window, $cacheFactory, Parse) {
 
 	$scope.newPost = function() {
 		var blogAuthor = $scope.blogAuthor, blogTitle = $scope.blogTitle, blogContent = $scope.blogContent;
@@ -29,6 +29,7 @@ BlogSite.controller('newpostController', ['$scope', '$http', '$rootScope', '$win
 			};
 			Parse.submitPost(blogPost)
 			.then(function(res) {
+				console.log(res.data);
 				$window.location.href = '#blogposts';
 			}).catch(function(err) {
 				console.log(err);

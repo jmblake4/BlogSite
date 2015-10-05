@@ -3,10 +3,10 @@
 		<button ng-click="createBlogEntry()">New blog entry</button>
 	</div>	
 	<div id="blogpostsContainer">
-		<div class="blogPost" ng-repeat="blogPost in blogPosts">
-			<h3><a href="#blogposts/{{blogPost.objectId}}"> {{ blogPost.title }}</a></h3>
-			<p>{{ blogPost.content }}</p>
-			<p>{{ blogPost.author }}</p>
+		<div class="row blogPost" ng-repeat="blogPost in blogPosts">
+			<h3 class="blogText"><a href="#blogposts/{{blogPost.objectId}}"> {{ blogPost.title }}</a></h3>
+			<p class="blogText">{{ blogPost.content }}</p>
+			<p class="blogText">{{ blogPost.author }}</p>
 		</div>
 	</div>
 </div>

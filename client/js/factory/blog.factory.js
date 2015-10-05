@@ -1,4 +1,4 @@
-BlogSite.factory('Parse', ['$http', function($http) {
+BlogSite.factory('Parse', ['$http', '$cacheFactory', '$rootScope', function($http, $cacheFactory, $rootScope) {
 
 	var ParseFactory = {};
 
@@ -7,7 +7,7 @@ BlogSite.factory('Parse', ['$http', function($http) {
 		"X-Parse-REST-API-Key": "gWWPdxPQm3OfSdwm1ZHLbVtNIv2BWWQXUztGkw5H",
 		"Content-Type": "application/json"
 	}};
-	
+
 	var urlPath = 'https://api.parse.com/1/classes/blogPost/';
 
 	ParseFactory.getPosts = function() {
